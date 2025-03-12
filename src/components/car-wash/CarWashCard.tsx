@@ -60,8 +60,8 @@ export default function CarWashCard({ service, onClick }: CarWashCardProps) {
         
         <div className="flex justify-between items-center">
           <div className="text-primary font-bold">
-            ${service.price}
-            <span className="text-xs font-normal text-muted-foreground ml-1">starting price</span>
+            R${service.price}
+            <span className="text-xs font-normal text-muted-foreground ml-1">preço inicial</span>
           </div>
         </div>
       </div>

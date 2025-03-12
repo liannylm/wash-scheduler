@@ -23,7 +23,7 @@ export default function AppHeader({ title, showBackButton = false }: AppHeaderPr
           <button 
             onClick={() => navigate(-1)} 
             className="w-10 h-10 -ml-2 flex items-center justify-center text-gray-600"
-            aria-label="Go back"
+            aria-label="Voltar"
           >
             <ChevronLeft size={24} />
           </button>

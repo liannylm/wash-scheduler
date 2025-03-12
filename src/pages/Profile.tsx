@@ -25,10 +25,10 @@ export default function Profile() {
   const appointments: Appointment[] = [
     {
       id: '1',
-      serviceName: 'Premium Car Wash',
-      date: 'May 28, 2023',
+      serviceName: 'Lavagem Premium',
+      date: '28 de Maio, 2023',
       time: '10:00',
-      washType: 'Deluxe Wash',
+      washType: 'Lavagem Deluxe',
       price: 25
     }
   ];
@@ -45,7 +45,7 @@ export default function Profile() {
   
   const handleLogout = () => {
     localStorage.removeItem('isAuthenticated');
-    toast.success('Logged out successfully');
+    toast.success('Desconectado com sucesso');
     navigate('/');
   };
   
@@ -54,7 +54,7 @@ export default function Profile() {
   }
 
   return (
-    <MobileLayout title="Profile">
+    <MobileLayout title="Perfil">
       <div className="p-4 space-y-6">
         <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
           <div className="flex items-center">
@@ -63,8 +63,8 @@ export default function Profile() {
               <AvatarFallback>JD</AvatarFallback>
             </Avatar>
             <div className="ml-4">
-              <h2 className="text-xl font-bold">John Doe</h2>
-              <p className="text-muted-foreground text-sm">john.doe@example.com</p>
+              <h2 className="text-xl font-bold">João Silva</h2>
+              <p className="text-muted-foreground text-sm">joao.silva@exemplo.com</p>
             </div>
           </div>
           
@@ -75,13 +75,13 @@ export default function Profile() {
               onClick={handleLogout}
             >
               <LogOut className="mr-2 h-4 w-4" />
-              Log out
+              Sair
             </Button>
           </div>
         </div>
         
         <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-          <h3 className="font-medium p-4 border-b">Upcoming Appointments</h3>
+          <h3 className="font-medium p-4 border-b">Próximos Agendamentos</h3>
           
           {appointments.length > 0 ? (
             <div className="divide-y">
@@ -97,19 +97,19 @@ export default function Profile() {
                       <div className="flex items-center text-sm text-muted-foreground mt-1">
                         <Calendar className="h-3.5 w-3.5 mr-1" />
                         <span>
-                          {appointment.date} at {appointment.time}
+                          {appointment.date} às {appointment.time}
                         </span>
                       </div>
                       <div className="text-sm mt-1">{appointment.washType}</div>
                     </div>
-                    <div className="font-bold">${appointment.price}</div>
+                    <div className="font-bold">R${appointment.price}</div>
                   </div>
                   <div className="flex justify-end mt-3">
                     <Button size="sm" variant="outline">
-                      Reschedule
+                      Reagendar
                     </Button>
                     <Button size="sm" variant="ghost" className="text-destructive">
-                      Cancel
+                      Cancelar
                     </Button>
                   </div>
                 </motion.div>
@@ -117,13 +117,13 @@ export default function Profile() {
             </div>
           ) : (
             <div className="p-6 text-center">
-              <p className="text-muted-foreground">No upcoming appointments</p>
+              <p className="text-muted-foreground">Nenhum agendamento próximo</p>
               <Button
                 className="mt-3"
                 size="sm"
                 onClick={() => navigate('/browse')}
               >
-                Book Now
+                Agendar Agora
               </Button>
             </div>
           )}
@@ -133,13 +133,13 @@ export default function Profile() {
           <motion.div
             whileTap={{ scale: 0.98 }}
             className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 flex justify-between items-center"
-            onClick={() => toast.info('Not implemented yet')}
+            onClick={() => toast.info('Não implementado ainda')}
           >
             <div className="flex items-center">
               <div className="bg-secondary rounded-full p-2 mr-3">
                 <Car className="h-5 w-5" />
               </div>
-              <span className="font-medium">My Cars</span>
+              <span className="font-medium">Meus Veículos</span>
             </div>
             <ChevronRight className="h-5 w-5 text-muted-foreground" />
           </motion.div>
@@ -147,13 +147,13 @@ export default function Profile() {
           <motion.div
             whileTap={{ scale: 0.98 }}
             className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 flex justify-between items-center"
-            onClick={() => toast.info('Not implemented yet')}
+            onClick={() => toast.info('Não implementado ainda')}
           >
             <div className="flex items-center">
               <div className="bg-secondary rounded-full p-2 mr-3">
                 <MapPin className="h-5 w-5" />
               </div>
-              <span className="font-medium">Saved Locations</span>
+              <span className="font-medium">Locais Salvos</span>
             </div>
             <ChevronRight className="h-5 w-5 text-muted-foreground" />
           </motion.div>
@@ -161,13 +161,13 @@ export default function Profile() {
           <motion.div
             whileTap={{ scale: 0.98 }}
             className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 flex justify-between items-center"
-            onClick={() => toast.info('Not implemented yet')}
+            onClick={() => toast.info('Não implementado ainda')}
           >
             <div className="flex items-center">
               <div className="bg-secondary rounded-full p-2 mr-3">
                 <CreditCard className="h-5 w-5" />
               </div>
-              <span className="font-medium">Payment Methods</span>
+              <span className="font-medium">Métodos de Pagamento</span>
             </div>
             <ChevronRight className="h-5 w-5 text-muted-foreground" />
           </motion.div>
@@ -175,13 +175,13 @@ export default function Profile() {
           <motion.div
             whileTap={{ scale: 0.98 }}
             className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 flex justify-between items-center"
-            onClick={() => toast.info('Not implemented yet')}
+            onClick={() => toast.info('Não implementado ainda')}
           >
             <div className="flex items-center">
               <div className="bg-secondary rounded-full p-2 mr-3">
                 <Shield className="h-5 w-5" />
               </div>
-              <span className="font-medium">Privacy Settings</span>
+              <span className="font-medium">Configurações de Privacidade</span>
             </div>
             <ChevronRight className="h-5 w-5 text-muted-foreground" />
           </motion.div>
@@ -189,13 +189,13 @@ export default function Profile() {
           <motion.div
             whileTap={{ scale: 0.98 }}
             className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 flex justify-between items-center"
-            onClick={() => toast.info('Not implemented yet')}
+            onClick={() => toast.info('Não implementado ainda')}
           >
             <div className="flex items-center">
               <div className="bg-secondary rounded-full p-2 mr-3">
                 <Settings className="h-5 w-5" />
               </div>
-              <span className="font-medium">App Settings</span>
+              <span className="font-medium">Configurações do Aplicativo</span>
             </div>
             <ChevronRight className="h-5 w-5 text-muted-foreground" />
           </motion.div>

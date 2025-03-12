@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import { format, addDays, isSameDay } from 'date-fns';
+import { ptBR } from 'date-fns/locale';
 import { ChevronRight, ChevronLeft, Check } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -55,7 +56,7 @@ export default function DateTimeSelector({ onSelect }: DateTimeSelectorProps) {
     <div className="space-y-6">
       <div className="space-y-3">
         <div className="flex items-center justify-between mb-2">
-          <h3 className="font-medium">Select Date</h3>
+          <h3 className="font-medium">Selecionar Data</h3>
           <div className="flex space-x-2">
             <button className="p-1 rounded-full hover:bg-gray-100">
               <ChevronLeft className="h-4 w-4" />
@@ -83,14 +84,14 @@ export default function DateTimeSelector({ onSelect }: DateTimeSelectorProps) {
                 onClick={() => handleDateSelect(day)}
               >
                 <span className="text-xs font-medium mb-1">
-                  {format(day, 'E')}
+                  {format(day, 'E', { locale: ptBR })}
                 </span>
                 <span className="text-2xl font-bold">
                   {format(day, 'd')}
                 </span>
                 {isToday && (
                   <span className="text-xs text-primary font-medium mt-1">
-                    Today
+                    Hoje
                   </span>
                 )}
               </motion.button>
@@ -100,7 +101,7 @@ export default function DateTimeSelector({ onSelect }: DateTimeSelectorProps) {
       </div>
       
       <div className="space-y-3">
-        <h3 className="font-medium">Select Time</h3>
+        <h3 className="font-medium">Selecionar Horário</h3>
         <div className="grid grid-cols-3 gap-2">
           {timeSlots.map((slot) => {
             const isSelected = selectedTime === slot.time;
