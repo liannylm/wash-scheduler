@@ -29,17 +29,17 @@ export default function AuthForm({ type }: AuthFormProps) {
       if (type === 'login') {
         // Mock successful login
         localStorage.setItem('isAuthenticated', 'true');
-        toast.success('Login successful!');
+        toast.success('Login realizado com sucesso!');
         navigate('/');
       } else {
         // Mock successful signup
         localStorage.setItem('isAuthenticated', 'true');
-        toast.success('Account created successfully!');
+        toast.success('Conta criada com sucesso!');
         navigate('/');
       }
     } catch (error) {
       console.error('Authentication error:', error);
-      toast.error(type === 'login' ? 'Login failed' : 'Signup failed');
+      toast.error(type === 'login' ? 'Falha no login' : 'Falha no cadastro');
     } finally {
       setIsLoading(false);
     }
@@ -54,12 +54,12 @@ export default function AuthForm({ type }: AuthFormProps) {
     >
       <div className="mb-8 text-center">
         <h1 className="text-2xl font-bold tracking-tight mb-2">
-          {type === 'login' ? 'Welcome back' : 'Create an account'}
+          {type === 'login' ? 'Bem-vindo de volta' : 'Criar uma conta'}
         </h1>
         <p className="text-muted-foreground">
           {type === 'login' 
-            ? 'Enter your credentials to access your account' 
-            : 'Enter your information to create an account'}
+            ? 'Digite suas credenciais para acessar sua conta' 
+            : 'Insira suas informações para criar uma conta'}
         </p>
       </div>
       
@@ -67,13 +67,13 @@ export default function AuthForm({ type }: AuthFormProps) {
         {type === 'signup' && (
           <div className="space-y-2">
             <label htmlFor="name" className="text-sm font-medium">
-              Full Name
+              Nome Completo
             </label>
             <div className="relative">
               <User className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
               <Input
                 id="name"
-                placeholder="John Doe"
+                placeholder="João Silva"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 className="pl-10"
@@ -92,7 +92,7 @@ export default function AuthForm({ type }: AuthFormProps) {
             <Input
               id="email"
               type="email"
-              placeholder="you@example.com"
+              placeholder="voce@exemplo.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="pl-10"
@@ -104,11 +104,11 @@ export default function AuthForm({ type }: AuthFormProps) {
         <div className="space-y-2">
           <div className="flex items-center justify-between">
             <label htmlFor="password" className="text-sm font-medium">
-              Password
+              Senha
             </label>
             {type === 'login' && (
               <Link to="/forgot-password" className="text-xs text-primary hover:underline">
-                Forgot password?
+                Esqueceu a senha?
               </Link>
             )}
           </div>
@@ -135,7 +135,7 @@ export default function AuthForm({ type }: AuthFormProps) {
             <div className="h-5 w-5 rounded-full border-2 border-white border-t-transparent animate-spin" />
           ) : (
             <>
-              {type === 'login' ? 'Sign in' : 'Create account'}
+              {type === 'login' ? 'Entrar' : 'Criar conta'}
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </>
           )}
@@ -145,16 +145,16 @@ export default function AuthForm({ type }: AuthFormProps) {
       <div className="mt-6 text-center text-sm">
         {type === 'login' ? (
           <p className="text-muted-foreground">
-            Don't have an account?{' '}
+            Não tem uma conta?{' '}
             <Link to="/signup" className="text-primary font-medium hover:underline">
-              Sign up
+              Cadastre-se
             </Link>
           </p>
         ) : (
           <p className="text-muted-foreground">
-            Already have an account?{' '}
+            Já tem uma conta?{' '}
             <Link to="/login" className="text-primary font-medium hover:underline">
-              Sign in
+              Entrar
             </Link>
           </p>
         )}

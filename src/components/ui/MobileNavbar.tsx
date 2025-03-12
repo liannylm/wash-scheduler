@@ -8,10 +8,10 @@ export default function MobileNavbar() {
   const currentPath = location.pathname;
   
   const navItems = [
-    { icon: Home, label: 'Home', path: '/' },
-    { icon: Search, label: 'Browse', path: '/browse' },
-    { icon: Calendar, label: 'Schedule', path: '/schedule' },
-    { icon: User, label: 'Profile', path: '/profile' },
+    { icon: Home, label: 'Início', path: '/' },
+    { icon: Search, label: 'Buscar', path: '/browse' },
+    { icon: Calendar, label: 'Agendar', path: '/schedule' },
+    { icon: User, label: 'Perfil', path: '/profile' },
   ];
   
   return (
