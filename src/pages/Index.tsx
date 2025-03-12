@@ -67,11 +67,11 @@ export default function Index() {
           <div className="flex justify-between items-center mb-5">
             <div className="text-white">
               <h1 className="text-2xl font-bold">
-                {isAuthenticated ? 'Olá, Usuário' : 'LaveExpress'}
+                {isAuthenticated ? 'Olá, Usuário' : 'LavExpress'}
               </h1>
               <div className="flex items-center mt-1">
                 <MapPin className="h-4 w-4 mr-1" />
-                <p className="text-sm">São Paulo, SP</p>
+                <p className="text-sm">Brasília, DF</p>
               </div>
             </div>
             {!isAuthenticated && (
@@ -134,15 +134,15 @@ export default function Index() {
             <div className="grid grid-cols-2 gap-3">
               <div className="bg-secondary rounded-lg p-3 text-center">
                 <div className="font-medium">Lavagem Básica</div>
-                <div className="text-sm text-muted-foreground">A partir de R$15</div>
-              </div>
-              <div className="bg-secondary rounded-lg p-3 text-center">
-                <div className="font-medium">Lavagem Premium</div>
                 <div className="text-sm text-muted-foreground">A partir de R$25</div>
               </div>
               <div className="bg-secondary rounded-lg p-3 text-center">
+                <div className="font-medium">Lavagem Premium</div>
+                <div className="text-sm text-muted-foreground">A partir de R$55</div>
+              </div>
+              <div className="bg-secondary rounded-lg p-3 text-center">
                 <div className="font-medium">Limpeza Interna</div>
-                <div className="text-sm text-muted-foreground">A partir de R$30</div>
+                <div className="text-sm text-muted-foreground">A partir de R$40</div>
               </div>
               <div className="bg-secondary rounded-lg p-3 text-center">
                 <div className="font-medium">Detalhamento</div>
